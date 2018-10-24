@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author NWhale Team
+ *
+ * @copyright Copyright (c) 2018 NWhale (https://www.nwhaletech.com)
+ * @package NWhale_Googlesurvey
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <nwhale_google_reviews translate="title">
+                                        <title>NWhale Google Customer Reviews</title>
+                                    </nwhale_google_reviews>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

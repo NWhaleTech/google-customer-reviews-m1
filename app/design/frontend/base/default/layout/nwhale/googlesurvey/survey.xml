@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author NWhale Team
+ *
+ * @copyright Copyright (c) 2018 NWhale (https://www.nwhaletech.com)
+ * @package NWhale_Googlesurvey
+ */
+-->
+<layout version="0.1.0">
+    <checkout_onepage_success>
+        <reference name="before_body_end">
+            <block type="nwhale_google_reviews/survey" name="nwhale_google_reviews_opt-in"
+                   template="nwhale/googlesurvey/survey.phtml"/>
+        </reference>
+    </checkout_onepage_success>
+
+    <onepagecheckout_index_success>
+        <reference name="before_body_end">
+            <block type="nwhale_google_reviews/survey" name="nwhale_google_reviews_opt-in"
+                   template="nwhale/googlesurvey/survey.phtml"/>
+        </reference>
+    </onepagecheckout_index_success>
+
+    <default>
+        <reference name="before_body_end">
+            <block type="nwhale_google_reviews/badgebottom" name="nwhale_google_reviews_badge_bottom"
+                   template="nwhale/googlesurvey/badge_bottom.phtml"/>
+        </reference>
+    </default>
+</layout>

@@ -1,0 +1,31 @@
+<?php
+/**
+ * @author NWhale Team
+ *
+ * @copyright Copyright (c) 2018 NWhale (https://www.nwhaletech.com)
+ * @package NWhale_Googlesurvey
+ */
+
+/** @var NWhale_Googlesurvey_Block_Badgebottom $this */
+?>
+<script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
+<?php if ($this->getLanguage()): ?>
+    <script>
+        window.___gcfg = {
+            lang: "<?php echo $this->escapeHtml($this->getLanguage()) ?>"
+        };
+    </script>
+<?php endif; ?>
+<script>
+    window.renderBadge = function() {
+        var ratingBadgeContainer = document.createElement("div");
+        document.body.appendChild(ratingBadgeContainer);
+        window.gapi.load('ratingbadge', function() {
+            window.gapi.ratingbadge.render(
+                ratingBadgeContainer, {
+                    "merchant_id": <?php echo $this->escapeHtml($this->getMerchantId()) ?>,
+                    "position": "<?php echo $this->escapeHtml($this->getPosition()) ?>"
+                });
+        });
+    }
+</script>

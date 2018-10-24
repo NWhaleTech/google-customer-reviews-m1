@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author NWhale Team
+ *
+ * @copyright Copyright (c) 2018 NWhale (https://www.nwhaletech.com)
+ * @package NWhale_Googlesurvey
+ */
+-->
+<config>
+    <modules>
+        <NWhale_Googlesurvey>
+            <version>1.0.1</version>
+        </NWhale_Googlesurvey>
+    </modules>
+
+    <global>
+        <helpers>
+            <nwhale_google_reviews>
+                <class>NWhale_Googlesurvey_Helper</class>
+            </nwhale_google_reviews>
+        </helpers>
+        <blocks>
+            <nwhale_google_reviews>
+                <class>NWhale_Googlesurvey_Block</class>
+            </nwhale_google_reviews>
+        </blocks>
+        <models>
+            <nwhale_google_reviews>
+                <class>NWhale_Googlesurvey_Model</class>
+                <resourceModel>nwhale_google_reviews_resource</resourceModel>
+            </nwhale_google_reviews>
+            <nwhale_google_reviews_resource>
+                <class>NWhale_Googlesurvey_Model_Resource</class>
+                <entities>
+                    <stats>
+                        <table>nwhale_survey_stats</table>
+                    </stats>
+                </entities>
+            </nwhale_google_reviews_resource>
+        </models>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <nwhale_google_reviews>
+                    <file>nwhale/googlesurvey/survey.xml</file>
+                </nwhale_google_reviews>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <NWhale_Googlesurvey>
+                    <files>
+                        <default>NWhale_Googlesurvey.csv</default>
+                    </files>
+                </NWhale_Googlesurvey>
+            </modules>
+        </translate>
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <NWhale_Googlesurvey>
+                    <files>
+                        <default>NWhale_Googlesurvey.csv</default>
+                    </files>
+                </NWhale_Googlesurvey>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <nwhale_google_reviews>
+            <general>
+                <enable>0</enable>
+                <delivery_time>0</delivery_time>
+                <delivery_weekends>1</delivery_weekends>
+            </general>
+            <opt-in>
+                <all_customers>1</all_customers>
+                <style>CENTER_DIALOG</style>
+                <language>0</language>
+            </opt-in>
+            <badge>
+                <enable>0</enable>
+                <position>BOTTOM_RIGHT</position>
+                <language>0</language>
+            </badge>
+        </nwhale_google_reviews>
+    </default>
+</config>

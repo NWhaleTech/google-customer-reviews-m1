@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author NWhale Team
+ *
+ * @copyright Copyright (c) 2018 NWhale (https://www.nwhaletech.com)
+ * @package NWhale_Googlesurvey
+ */
+-->
+<config>
+    <modules>
+        <NWhale_Googlesurvey>
+            <active>true</active>
+            <codePool>community</codePool>
+        </NWhale_Googlesurvey>
+    </modules>
+</config>

@@ -1,0 +1,19 @@
+<?php
+/**
+ * @author NWhale Team
+ *
+ * @copyright Copyright (c) 2018 NWhale (https://www.nwhaletech.com)
+ * @package NWhale_Googlesurvey
+ */
+
+/** @var NWhale_Googlesurvey_Block_Badge $this */
+?>
+<?php if ($this->getLanguage()): ?>
+    <script>
+        window.___gcfg = {
+            lang: "<?php echo $this->escapeHtml($this->getLanguage()) ?>"
+        };
+    </script>
+<?php endif; ?>
+<script src="https://apis.google.com/js/platform.js" async defer></script>​
+<g:ratingbadge merchant_id=<?php echo $this->escapeHtml($this->getMerchantId()) ?>></g:ratingbadge>​

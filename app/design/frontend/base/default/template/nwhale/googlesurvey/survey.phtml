@@ -1,0 +1,38 @@
+<?php
+/**
+ * @author NWhale Team
+ *
+ * @copyright Copyright (c) 2018 NWhale (https://www.nwhaletech.com)
+ * @package NWhale_Googlesurvey
+ */
+
+/** @var NWhale_Googlesurvey_Block_Survey $this */
+?>
+
+<script src="https://apis.google.com/js/platform.js?onload=renderOptIn"
+        async defer>
+</script>
+
+<?php if ($this->getLanguage()): ?>
+<script>
+    window.___gcfg = {
+        lang: "<?php echo $this->escapeHtml($this->getLanguage()) ?>"
+    };
+</script>
+<?php endif; ?>
+
+<script>
+    window.renderOptIn = function() {
+        window.gapi.load('surveyoptin', function() {
+            window.gapi.surveyoptin.render(
+                {
+                    "merchant_id": "<?php echo $this->escapeHtml($this->getMerchantId()) ?>",
+                    "order_id": "<?php echo $this->escapeHtml($this->getOrderId()) ?>",
+                    "email": "<?php echo $this->escapeHtml($this->getEmail()) ?>",
+                    "delivery_country": "<?php echo $this->escapeHtml($this->getDeliveryCountry()) ?>",
+                    "estimated_delivery_date": "<?php echo $this->escapeHtml($this->getEstimatedDeliveryDate()) ?>",
+                    "opt_in_style": "<?php echo $this->escapeHtml($this->getOptInStyle()) ?>"
+                });
+        });
+    }
+</script>
