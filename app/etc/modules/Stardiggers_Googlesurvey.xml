@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Stardiggers Team
+ * @author Evgeni Obukhovsky <eobuhovsky@gmail.com>
+ * @copyright Copyright (c) 2017 Stardiggers (https://www.stardiggers.com)
+ * @package Stardiggers_Googlesurvey
+ */
+-->
+<config>
+    <modules>
+        <Stardiggers_Googlesurvey>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Stardiggers_Googlesurvey>
+    </modules>
+</config>

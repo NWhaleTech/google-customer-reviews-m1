@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author Stardiggers Team
+ * @author Evgeni Obukhovsky <eobuhovsky@gmail.com>
+ * @copyright Copyright (c) 2017 Stardiggers (https://www.stardiggers.com)
+ * @package Stardiggers_Googlesurvey
+ */
+-->
+<config>
+    <tabs>
+        <stardiggers translate="label" module="starsurvey">
+            <label>StarDiggers Extensions</label>
+            <sort_order>99998</sort_order>
+        </stardiggers>
+    </tabs>
+    <sections>
+        <starsurvey  translate="label" module="starsurvey">
+            <label>Google Customer Reviews</label>
+            <tab>stardiggers</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable Google Customer Reviews</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enable>
+                        <merchant_id translate="label comment">
+                            <label>Merchant ID</label>
+                            <comment>from Google Merchant Center</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number validate-greater-than-zero</validate>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </merchant_id>
+                        <delivery_time translate="label comment">
+                            <label>Default Estimated Delivery Time</label>
+                            <comment>in working days</comment>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number validate-zero-or-greater</validate>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </delivery_time>
+                        <delivery_weekends translate="label">
+                            <label>Delivery Include Weekends</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </delivery_weekends>
+                        <custom_time translate="label comment">
+                            <label>Custom Delivery Time Rules</label>
+                            <frontend_model>starsurvey/adminhtml_form_field_customdelivery</frontend_model>
+                            <backend_model>starsurvey/system_config_backend_customdelivery</backend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Values for a specific carrier have higher priority than defaults</comment>
+                        </custom_time>
+                    </fields>
+                </general>
+                <opt-in translate="label">
+                    <label>Survey Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <all_customers translate="label">
+                            <label>Offer to all customer groups</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </all_customers>
+                        <customer_groups translate="label comment">
+                            <label>Customer groups offered to take a survey</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>starsurvey/system_config_source_customergroup</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>A survey offering will be disabled if no group is selected.</comment>
+                            <depends>
+                                <all_customers>0</all_customers>
+                            </depends>
+                        </customer_groups>
+                        <style translate="label">
+                            <label>Survey Style</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>starsurvey/system_config_source_optinstyle</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </style>
+                        <language translate="label">
+                            <label>Survey Language</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>starsurvey/system_config_source_language</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </language>
+                    </fields>
+                </opt-in>
+                <badge translate="label">
+                    <label>Badge Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable Badge</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <position translate="label">
+                            <label>Badge Position</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>starsurvey/system_config_source_badgeposition</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </position>
+                        <custom_comment translate="label">
+                            <label></label>
+                            <frontend_type>label</frontend_type>
+                            <comment><![CDATA[
+<b style="font-size:12px">Add a badge using any of following methods</b><br>
+<b>a) .phtml file:</b><br>
+&lt;?php echo Mage::app()->getLayout()->createBlock('starsurvey/badge')->toHtml(); ?&gt;<br>
+<b>b) layout update:</b><br>
+&lt;block type="starsurvey/badge"/&gt;<br>
+<b>c) CMS page or block:</b><br>
+{{block type="starsurvey/badge"}}
+                            ]]></comment>
+                            <frontend_model>starsurvey/adminhtml_form_field_comment</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><position><![CDATA[CUSTOM]]></position></depends>
+                        </custom_comment>
+                        <language translate="label">
+                            <label>Badge Language</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>starsurvey/system_config_source_language</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </language>
+                    </fields>
+                </badge>
+            </groups>
+        </starsurvey>
+    </sections>
+</config>

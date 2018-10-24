@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author Stardiggers Team
+ * @author Evgeni Obukhovsky <eobuhovsky@gmail.com>
+ * @copyright Copyright (c) 2017 Stardiggers (https://www.stardiggers.com)
+ * @package Stardiggers_Googlesurvey
+ */
+-->
+<config>
+    <modules>
+        <Stardiggers_Googlesurvey>
+            <version>1.0.1</version>
+        </Stardiggers_Googlesurvey>
+    </modules>
+
+    <global>
+        <helpers>
+            <starsurvey>
+                <class>Stardiggers_Googlesurvey_Helper</class>
+            </starsurvey>
+        </helpers>
+        <blocks>
+            <starsurvey>
+                <class>Stardiggers_Googlesurvey_Block</class>
+            </starsurvey>
+        </blocks>
+        <models>
+            <starsurvey>
+                <class>Stardiggers_Googlesurvey_Model</class>
+                <resourceModel>starsurvey_resource</resourceModel>
+            </starsurvey>
+            <starsurvey_resource>
+                <class>Stardiggers_Googlesurvey_Model_Resource</class>
+                <entities>
+                    <stats>
+                        <table>star_survey_stats</table>
+                    </stats>
+                </entities>
+            </starsurvey_resource>
+        </models>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <starsurvey>
+                    <file>stardiggers/googlesurvey/survey.xml</file>
+                </starsurvey>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Stardiggers_Googlesurvey>
+                    <files>
+                        <default>Stardiggers_Googlesurvey.csv</default>
+                    </files>
+                </Stardiggers_Googlesurvey>
+            </modules>
+        </translate>
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <Stardiggers_Googlesurvey>
+                    <files>
+                        <default>Stardiggers_Googlesurvey.csv</default>
+                    </files>
+                </Stardiggers_Googlesurvey>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <default>
+        <starsurvey>
+            <general>
+                <enable>0</enable>
+                <delivery_time>0</delivery_time>
+                <delivery_weekends>1</delivery_weekends>
+            </general>
+            <opt-in>
+                <all_customers>1</all_customers>
+                <style>CENTER_DIALOG</style>
+                <language>0</language>
+            </opt-in>
+            <badge>
+                <enable>0</enable>
+                <position>BOTTOM_RIGHT</position>
+                <language>0</language>
+            </badge>
+        </starsurvey>
+    </default>
+</config>

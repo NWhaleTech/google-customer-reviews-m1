@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Stardiggers Team
+ * @author Evgeni Obukhovsky <eobuhovsky@gmail.com>
+ * @copyright Copyright (c) 2017 Stardiggers (https://www.stardiggers.com)
+ * @package Stardiggers_Googlesurvey
+ */
+-->
+<layout version="0.1.0">
+    <checkout_onepage_success>
+        <reference name="before_body_end">
+            <block type="starsurvey/survey" name="starsurvey_opt-in" template="stardiggers/googlesurvey/survey.phtml" />
+        </reference>
+    </checkout_onepage_success>
+
+    <onepagecheckout_index_success>
+        <reference name="before_body_end">
+            <block type="starsurvey/survey" name="starsurvey_opt-in" template="stardiggers/googlesurvey/survey.phtml" />
+        </reference>
+    </onepagecheckout_index_success>
+
+    <default>
+        <reference name="before_body_end">
+            <block type="starsurvey/badgebottom" name="starsurvey_badge_bottom" template="stardiggers/googlesurvey/badge_bottom.phtml" />
+        </reference>
+    </default>
+</layout>
